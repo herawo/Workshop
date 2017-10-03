@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Fiche Besoin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/fichebesoin.min.css" rel="stylesheet">
 
   </head>
 
@@ -27,27 +27,13 @@
 	<header class="masthead">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			Menu
-			<i class="fa fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-				</li>
-				<li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#about">About</a>
-				</li>
-				<li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-				</li>
-			</ul>
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">TABLEAU DE BORD</a>
+			
 			</div>
 		</div>
 		</nav>
     </header>
+	<div class="container">
     	<div class="row">
           <div class="col-lg-8 mx-auto">
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
@@ -61,30 +47,73 @@
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="email" type="email" placeholder="Email Address" required="" data-validation-required-message="Please enter your email address.">
+                  <input class="form-control" id="client" type="text" placeholder="Client a compléter" required="" data-validation-required-message="Please enter your email address.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="" data-validation-required-message="Please enter your phone number.">
+                  <input class="form-control" id="Contactname" type="text" placeholder="Contact name" required="" data-validation-required-message="Please enter your phone number.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <textarea class="form-control" id="message" rows="5" placeholder="Message" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <input class="form-control" id="title" type="text" placeholder="Title" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+			  <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <textarea class="form-control" id="fulldesc"  placeholder="Full description" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+			   <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <textarea class="form-control" id="3mainkey" rows="3" placeholder="3 main key success factors" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="duration" type="text" placeholder="Duration(months)" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="start" type="date" placeholder="Start at the latest" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="text" type="text" placeholder="Location" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="rate" type="text" placeholder="Rate(€ HT)" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="rate" type="text" placeholder="Rate(€ HT)" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="rate" type="text" placeholder="Description file a compléter" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+				<div class="form-group floating-label-form-group controls">
+                  <textarea class="form-control" id="consultants" rows=5 placeholder="Consultants name" required="" data-validation-required-message="Please enter a message."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Send</button>
+                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Save & Share</button>
+              </div>
+			   <div class="control-group">
               </div>
             </form>
           </div>
         </div>
+	<div\>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
