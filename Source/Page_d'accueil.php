@@ -45,7 +45,7 @@ if(!$_COOKIE['connected']){
     </nav>
 		
 	</header>
-		<a class="navbar-brand js-scroll-trigger" href="fichebesoin.html">Création d'une fiche de besoin</a>
+		<a class="navbar-brand js-scroll-trigger" href="fichebesoin.php">Création d'une fiche de besoin</a>
 	<div class="col-lg-8 mx-auto">
 		<table id="tableau_besoin" class="table">
 

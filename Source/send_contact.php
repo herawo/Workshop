@@ -32,4 +32,6 @@ $stmt->bindParam(':file', $file);
 
 $stmt->execute();
 
+header("Location: Page_d'accueil.php");
+
 ?>

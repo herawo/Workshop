@@ -1,3 +1,9 @@
+<?php
+if(!$_COOKIE['connected']){
+  header("Location: Page_de_connexion.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +33,7 @@
 	<header class="masthead">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="Page_d'accueil.html">TABLEAU DE BORD</a>
+			<a class="navbar-brand js-scroll-trigger" href="Page_d'accueil.php">TABLEAU DE BORD</a>
 			
 			</div>
 		</div>
