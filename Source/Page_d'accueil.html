@@ -34,10 +34,10 @@
             <input type="text" style="width:150px" class="input-sm form-control" placeholder="Recherche">
             <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
       </form>
+	<a class="navbar-brand js-scroll-trigger" href="fichebesoin.html">Création d'une fiche de besoin</a>
     </nav>
-		
 	</header>
-		<a class="navbar-brand js-scroll-trigger" href="fichebesoin.html">Création d'une fiche de besoin</a>
+		
 	<div class="col-lg-8 mx-auto">
 		<table id="tableau_besoin" class="table">
 
@@ -74,14 +74,19 @@
 			  <td>Client1</td>
 			  <td>Statut1</td>
 			  <td>Date1</td>
-			  <td><button type="button" class="btn btn-link" >Suppr</button></td>
+			  <td><button type="button" class="btn btn-link" >Suppr</button>
+			  </td>
 			</tr>
 		  </tbody>
 		</table>
 	</div>
-	<div>
-		
-	</div>
+	<button onclick="myFunction()">Try it</button>
+
+	<script>
+	function myFunction() {
+		document.getElementById("tableau_besoin").deleteRow(0);
+	}
+	</script>
 
     <!-- Footer -->
     <footer class="text-center">
