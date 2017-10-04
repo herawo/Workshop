@@ -1,4 +1,5 @@
 <?php
+//setcookie("connected",true);
 if(!$_COOKIE['connected']){
   header("Location: Page_de_connexion.html");
 }
