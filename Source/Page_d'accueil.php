@@ -1,3 +1,11 @@
+<?php
+if(!$_COOKIE['connected']){
+  header("Location: Page_de_connexion.html");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +25,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
+	<link href="DataTables/datatables.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
@@ -28,43 +36,67 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger">Connexion</a>
+        <a class="navbar-brand js-scroll-trigger">Tableau de bord</a>
       </div>
+	  <form class="form-inline pull-right">
+            <input type="text" style="width:150px" class="input-sm form-control" placeholder="Recherche">
+            <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+      </form>
     </nav>
-
+		
 	</header>
-  <div class="container" style="padding: 10vh 0vw">
-    <!-- <div class="row"> -->
-        <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-          <form name="sentMessage" id="contactForm" novalidate="" action="connection.php" methode="get">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <input class="form-control" id="client" type="text" placeholder="Adresse e-mail" required="" data-validation-required-message="Please enter your email address." name='mail'>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <input class="form-control" id="client" type="text" placeholder="Mot de passe" required="" data-validation-required-message="Please enter your email address." name='mdp'>
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="control-group">
-                <button type="submit" class="btn btn-success btn-lg" id="Connection">Connection</button>
-              </div>
-          </form>
-        <!-- </div> -->
-      <!-- </div> -->
-  </div>
+		<a class="navbar-brand js-scroll-trigger" href="fichebesoin.html">Création d'une fiche de besoin</a>
+	<div class="col-lg-8 mx-auto">
+		<table id="tableau_besoin" class="table">
+
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>Titre</th>
+			  <th>Nom du client</th>
+			  <th>Statut</th>
+			  <th>Date</th>
+			  <th></th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>Titre1</td>
+			  <td>Client1</td>
+			  <td>Statut1</td>
+			  <td>Date1</td>
+			  <td><button type="button" class="btn btn-link">Suppr</button></td>
+			</tr>
+			<tr>
+			  <th scope="row">2</th>
+			  <td>Titre1</td>
+			  <td>Client1</td>
+			  <td>Statut1</td>
+			  <td>Date1</td>
+			  <td><button type="button" class="btn btn-link">Suppr</button></td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>Titre1</td>
+			  <td>Client1</td>
+			  <td>Statut1</td>
+			  <td>Date1</td>
+			  <td><button type="button" class="btn btn-link" >Suppr</button></td>
+			</tr>
+		  </tbody>
+		</table>
+	</div>
+	<div>
+		
+	</div>
+
     <!-- Footer -->
     <footer class="text-center">
       <div class="footer-above">
         <div class="container">
           <div class="row">
             <div class="footer-col col-md-4">
-              <h3>Location</h3>
               <p>EPSI - Ecole d'ingénierie informatique
 			    <br>3 Bis Rue de la condamine
                 <br>38610 Gières</p>
@@ -390,7 +422,8 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
+	<script src="DataTables/datatables.min.js"></script>
+	<script src="Tableau_avec_tri.js"</script>
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
