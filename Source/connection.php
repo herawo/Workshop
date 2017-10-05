@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 $user = 'root';
@@ -12,10 +15,12 @@ $stmt->bindparam(":mail",$mail);
 $res = $stmt->execute();
 $row = $stmt->fetch();
 $mdp_com = $row['mdp'];
+$id_com = $row['idCommercial'];
 
 if($mdp_com == $mdp){
 	echo "Connection";
 	setcookie("connected",true);
+	setcookie("COMMID",$id_com);
 	header("Location: Page_d'accueil.php");
 }
 ?>

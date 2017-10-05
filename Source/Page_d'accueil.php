@@ -1,12 +1,18 @@
-
 <?php
-//setcookie("connected",true);
 if(!$_COOKIE['connected']){
   header("Location: Page_de_connexion.html");
 }
+
+$user = 'root';
+$pass = '';
+$dbh = new PDO('mysql:host=localhost;dbname=assist_com', $user, $pass);
+
+$stmt = $dbh->prepare("SELECT * from projet");
+$stmt->bindparam(":mail",$mail);
+$res = $stmt->execute();
+//$row = $stmt->fetch();
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,71 +33,59 @@ if(!$_COOKIE['connected']){
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href="DataTables/datatables.min.css" rel="stylesheet" type="text/css">
+  <link href="DataTables/datatables.min.css" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
-	<header>
+  <header>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger">Tableau de bord</a>
       </div>
-	  <form class="form-inline pull-right">
+    <form class="form-inline pull-right">
             <input type="text" style="width:150px" class="input-sm form-control" placeholder="Recherche">
             <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
       </form>
     </nav>
-		
-	</header>
-		<a class="navbar-brand js-scroll-trigger" href="fichebesoin.php">Création d'une fiche de besoin</a>
-	<div class="col-lg-8 mx-auto">
-		<table id="tableau_besoin" class="table">
+    
+  </header>
+    <a class="navbar-brand js-scroll-trigger" href="fiche_besoin.html">Création d'une fiche de besoin</a>
+  <div class="col-lg-8 mx-auto">
+    <table id="tableau_besoin" class="table">
 
-		  <thead>
-			<tr>
-			  <th>#</th>
-			  <th>Titre</th>
-			  <th>Nom du client</th>
-			  <th>Statut</th>
-			  <th>Date</th>
-			  <th></th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-			  <th scope="row">1</th>
-			  <td>Titre1</td>
-			  <td>Client1</td>
-			  <td>Statut1</td>
-			  <td>Date1</td>
-			  <td><button type="button" class="btn btn-link">Suppr</button></td>
-			</tr>
-			<tr>
-			  <th scope="row">2</th>
-			  <td>Titre1</td>
-			  <td>Client1</td>
-			  <td>Statut1</td>
-			  <td>Date1</td>
-			  <td><button type="button" class="btn btn-link">Suppr</button></td>
-			</tr>
-			<tr>
-			  <th scope="row">3</th>
-			  <td>Titre1</td>
-			  <td>Client1</td>
-			  <td>Statut1</td>
-			  <td>Date1</td>
-			  <td><button type="button" class="btn btn-link" >Suppr</button></td>
-			</tr>
-		  </tbody>
-		</table>
-	</div>
-	<div>
-		
-	</div>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Titre</th>
+        <th>Nom du client</th>
+        <th>Statut</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        <?php
+        while($donnees = $stmt->fetch()){
+          echo "<tr>";
+          echo "<th scope='row'>1</th>";
+          echo "<td>".$donnees['title']."</td>";
+          echo "<td>".$donnees['contact_name']."</td>";
+          echo "<td>Statut1</td>";
+          echo "<td>".$donnees['start']."</td>";
+          echo "<td><button type='button' class='btn btn-link'>Suppr</button></td>";
+          echo "</tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    
+  </div>
 
     <!-- Footer -->
     <footer class="text-center">
@@ -100,7 +94,7 @@ if(!$_COOKIE['connected']){
           <div class="row">
             <div class="footer-col col-md-4">
               <p>EPSI - Ecole d'ingénierie informatique
-			    <br>3 Bis Rue de la condamine
+          <br>3 Bis Rue de la condamine
                 <br>38610 Gières</p>
             </div>
             <div class="footer-col col-md-4">
@@ -424,8 +418,8 @@ if(!$_COOKIE['connected']){
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="DataTables/datatables.min.js"></script>
-	<script src="Tableau_avec_tri.js"</script>
+  <script src="DataTables/datatables.min.js"></script>
+  <script src="Tableau_avec_tri.js"</script>
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -439,3 +433,6 @@ if(!$_COOKIE['connected']){
   </body>
 
 </html>
+
+
+
