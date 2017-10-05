@@ -79,11 +79,11 @@ $today = date("d.m.y");
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="duration" type="text" placeholder="Durée(mois)" required data-validation-required-message="Please enter a duration." name="duration_month" pattern="[0-9]">
+                  <input class="form-control" id="duration" type="text" placeholder="Durée(mois)" required data-validation-required-message="Please enter a duration." name="duration_month" pattern="[0-9]{0,5}">
                   <p class="help-block text-danger"></p>
                 </div>
         <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="duration" type="text" placeholder="Durée(jour)" required data-validation-required-message="Please enter a duration." name="duration_day" pattern="[0-9]">
+                  <input class="form-control" id="duration" type="text" placeholder="Durée(jour)" required data-validation-required-message="Please enter a duration." name="duration_day" pattern="[0-9]{0,5}">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
