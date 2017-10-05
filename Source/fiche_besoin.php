@@ -1,7 +1,7 @@
 <?php
 //setcookie("connected",true);
 if(!$_COOKIE['connected']){
-  header("Location: Page_de_connexion.html");
+  header("Location: Page_de_connexion.php");
 }
 
 $today = date("d.m.y"); 
@@ -47,11 +47,11 @@ $today = date("d.m.y");
           <div class="col-lg-8 mx-auto">
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form name="sentMessage" id="contactForm" novalidate="" action="send_contact.php" method="post">
+            <form name="sentMessage" id="contactForm" action="send_contact.php" method="post">
               <p> Date d'aujourd'hui : <?php echo $today ?></p>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="client" type="text" placeholder="Client" required data-validation-required-message="Please enter your email address." name="contact_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                  <input class="form-control" id="client" type="text" placeholder="Email client" required data-validation-required-message="Please enter your email address." name="contact_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ $today = date("d.m.y");
               </div>
 			  <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <textarea class="form-control" id="fulldesc"  placeholder="Description" data-validation-required-message="Please enter a description." name="full_description"></textarea>
+                  <textarea class="form-control" id="fulldesc"  placeholder="Description" required data-validation-required-message="Please enter a description." name="full_description"></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -87,11 +87,11 @@ $today = date("d.m.y");
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="text" type="text" placeholder="Lieu" required data-validation-required-message="Please enter a location." name="location" pattern="[A-Za-z]">
+                  <input class="form-control" id="text" type="text" placeholder="Lieu" required data-validation-required-message="Please enter a location." name="location" pattern="[A-Za-z]{0,100}">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="rate" type="text" placeholder="Prix(€ HT)" data-validation-required-message="Please enter a price." name="rate" pattern="[0-9]">
+                  <input class="form-control" id="rate" type="text" placeholder="Prix(€ HT)" required data-validation-required-message="Please enter a price." name="rate" pattern="[0-9]">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">

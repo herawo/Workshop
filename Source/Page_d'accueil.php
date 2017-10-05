@@ -1,6 +1,6 @@
 <?php
 if(!$_COOKIE['connected']){
-  header("Location: Page_de_connexion.html");
+  header("Location: Page_de_connexion.php");
 }
 
 $user = 'root';
