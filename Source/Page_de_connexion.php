@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="control-group">
-          <button type="submit" class="btn btn-success btn-lg" id="Connection">Connection</button>
+          <button type="submit" class="btn btn-success btn-lg" id="Connection">Connexion</button>
         </div>
       </form>
       <!-- </div> -->

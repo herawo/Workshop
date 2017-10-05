@@ -51,13 +51,13 @@ $today = date("d.m.y");
               <p> Date d'aujourd'hui : <?php echo $today ?></p>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="client" type="text" placeholder="Email client" required data-validation-required-message="Please enter your email address." name="contact_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                  <input value="@gfi.fr" class="form-control" id="client" type="text" placeholder="Email client" required data-validation-required-message="Please enter your email address." name="contact_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="Contactname" type="text" placeholder="Numéro de Téléphone" required data-validation-required-message="Please enter your phone number." name="contact_name" pattern="[0-9]{10}">
+                  <input class="form-control" id="Contactname" type="text" placeholder="Nom du client" required data-validation-required-message="Please enter your phone number." name="contact_name" pattern="[A-Za-z]{0,100}">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -79,7 +79,11 @@ $today = date("d.m.y");
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="duration" type="text" placeholder="Durée(mois)" required data-validation-required-message="Please enter a message." name="duration_month" pattern="[0-9]">
+                  <input class="form-control" id="duration" type="text" placeholder="Durée(mois)" required data-validation-required-message="Please enter a duration." name="duration_month" pattern="[0-9]">
+                  <p class="help-block text-danger"></p>
+                </div>
+        <div class="form-group floating-label-form-group controls">
+                  <input class="form-control" id="duration" type="text" placeholder="Durée(jour)" required data-validation-required-message="Please enter a duration." name="duration_day" pattern="[0-9]">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
@@ -91,7 +95,7 @@ $today = date("d.m.y");
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="rate" type="text" placeholder="Prix(€ HT)" required data-validation-required-message="Please enter a price." name="rate" pattern="[0-9]">
+                  <input class="form-control" id="rate" type="text" placeholder="Prix(€ HT)" required data-validation-required-message="Please enter a price." name="rate" pattern="[0-9]{0,10}">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
@@ -99,7 +103,7 @@ $today = date("d.m.y");
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="consultants" rows=5 placeholder="Nom du consultant" required data-validation-required-message="Please enter a message." pattern="[A-Za-z]">
+                  <input class="form-control" id="consultants" rows=5 placeholder="Nom du consultant" required data-validation-required-message="Please enter a message." pattern="[A-Za-z]{0,100}">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>

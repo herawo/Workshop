@@ -1,4 +1,7 @@
 <?php
+if(!$_COOKIE['connected']){
+  header("Location: Page_de_connexion.php");
+}
 $user = 'root';
 $pass = '';
 $dbh = new PDO('mysql:host=localhost;dbname=assist_com', $user, $pass);

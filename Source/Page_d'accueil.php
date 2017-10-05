@@ -71,11 +71,11 @@ $res = $stmt->execute();
         while($donnees = $stmt->fetch()){
           echo "<tr>";
           echo "<th scope='row'>".$donnees['idProjet']."</th>";
-          echo "<td>".$donnees['title']."</td>";
+          echo "<td><a href='modifier.php?id=".$donnees['idProjet']."'>".$donnees['title']."</a></td>";
           echo "<td>".$donnees['contact_name']."</td>";
           echo "<td>".$donnees['statut']."</td>";
           echo "<td>".$donnees['start']."</td>";
-          echo '<td><a href="delete.php?id='.$donnees['idProjet'].'">Delete</a>';
+          echo '<td><a href="delete.php?id='.$donnees['idProjet'].'">Supprimer</a></td>';
           echo "</tr>";
         }
         ?>

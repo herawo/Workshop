@@ -26,4 +26,7 @@ if($mdp_com == $mdp){
 	setcookie("COMMID",$id_com);
 	header("Location: Page_d'accueil.php");
 }
+else{
+	header("Location: Page_de_connexion.php");
+}
 ?>

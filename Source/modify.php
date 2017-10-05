@@ -8,7 +8,7 @@ $user = 'root';
 $pass = '';
 $dbh = new PDO('mysql:host=localhost;dbname=assist_com', $user, $pass);
 
-$date=date("d.m.y");
+$id=$_GET['id'];
 $contact_mail=$_POST['contact_mail'];
 $full_description=$_POST['full_description'];
 $contact_name=$_POST['contact_name'];
@@ -22,10 +22,22 @@ $file=$_POST['file'];
 $creator=$_COOKIE['COMMID'];
 $statut="Attente";
 
+$stmt = $dbh->prepare("UPDATE projet
+				SET 
+				contact_mail = :contact_mail,
+				full_description = :full_description,
+				contact_name = :contact_name,
+				title = :title,
+				duration_month = :duration_month,
+				duration_day = :duration_day,
+				start = :start,
+				location = :location,
+				rate = :rate,
+				file = :file,
+				creator = :creator,
+				statut = :statut
+				WHERE idProjet = :id");
 
-$stmt = $dbh->prepare("INSERT INTO projet(date, contact_mail, full_description, contact_name, title, duration_month, duration_day, start, location, rate, file, creator, statut)  VALUES (:date, :contact_mail, :full_description, :contact_name, :title, :duration_month, :duration_day, :start, :location, :rate, :file, :creator, :statut)");
-
-$stmt->bindParam(":date", strtotime($date));
 $stmt->bindParam(':contact_mail', $contact_mail);
 $stmt->bindParam(':full_description', $full_description);
 $stmt->bindParam(':contact_name', $contact_name);
@@ -38,6 +50,7 @@ $stmt->bindParam(':rate', $rate);
 $stmt->bindParam(':file', $file);
 $stmt->bindParam(':creator',$creator);
 $stmt->bindParam(':statut',$statut);
+$stmt->bindParam(':id',$id);
 
 $stmt->execute();
 
