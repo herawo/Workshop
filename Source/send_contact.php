@@ -15,9 +15,10 @@ $location=$_POST['location'];
 $rate=$_POST['rate'];
 $file=$_POST['file'];
 $creator=$_COOKIE['COMMID'];
+$statut="En attente";
 
 
-$stmt = $dbh->prepare("INSERT INTO projet(date, contact_mail, full_description, contact_name, title, duration_month, start, location, rate, file,creator)  VALUES (:date, :contact_mail, :full_description, :contact_name, :title, :duration_month, :start, :location, :rate, :file, :creator)");
+$stmt = $dbh->prepare("INSERT INTO projet(date, contact_mail, full_description, contact_name, title, duration_month, start, location, rate, file, creator, statut)  VALUES (:date, :contact_mail, :full_description, :contact_name, :title, :duration_month, :start, :location, :rate, :file, :creator, :statut)");
 
 $stmt->bindParam(":date", strtotime($date));
 $stmt->bindParam(':contact_mail', $contact_mail);
@@ -30,6 +31,7 @@ $stmt->bindParam(':location', $location);
 $stmt->bindParam(':rate', $rate);
 $stmt->bindParam(':file', $file);
 $stmt->bindParam(':creator',$creator);
+$stmt->bindParam(':statut',$statut);
 
 $stmt->execute();
 

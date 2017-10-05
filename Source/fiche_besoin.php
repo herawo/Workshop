@@ -3,6 +3,8 @@
 if(!$_COOKIE['connected']){
   header("Location: Page_de_connexion.html");
 }
+
+$today = date("d.m.y"); 
 ?>
 
 <!DOCTYPE html>
@@ -46,70 +48,65 @@ if(!$_COOKIE['connected']){
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
             <form name="sentMessage" id="contactForm" novalidate="" action="send_contact.php" method="post">
+              <p> Date d'aujourd'hui : <?php echo $today ?></p>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="date" type="date" placeholder="Date" name="date">
+                  <input class="form-control" id="client" type="text" placeholder="Client" required data-validation-required-message="Please enter your email address." name="contact_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="client" type="text" placeholder="Client a compléter" required="" data-validation-required-message="Please enter your email address." name="contact_mail">
+                  <input class="form-control" id="Contactname" type="text" placeholder="Numéro de Téléphone" required data-validation-required-message="Please enter your phone number." name="contact_name" pattern="[0-9]{10}">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="Contactname" type="text" placeholder="Contact name" required="" data-validation-required-message="Please enter your phone number." name="contact_name">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="title" type="text" placeholder="Title" required="" data-validation-required-message="Please enter a message." name="title"></textarea>
+                  <input class="form-control" id="title" type="text" placeholder="Titre" required data-validation-required-message="Please enter a title." name="title" ></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
 			  <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <textarea class="form-control" id="fulldesc"  placeholder="Full description" required="" data-validation-required-message="Please enter a message." name="full_description"></textarea>
+                  <textarea class="form-control" id="fulldesc"  placeholder="Description" data-validation-required-message="Please enter a description." name="full_description"></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
 			   <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
-                  <textarea class="form-control" id="3mainkey" rows="3" placeholder="3 main key success factors" required="" data-validation-required-message="Please enter a message."></textarea>
+                  <textarea class="form-control" id="3mainkey" rows="3" placeholder="3 mots clé" data-validation-required-message="Please enter a message."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="duration" type="text" placeholder="Duration(months)" required="" data-validation-required-message="Please enter a message." name="duration_month"></textarea>
+                  <input class="form-control" id="duration" type="text" placeholder="Durée(mois)" required data-validation-required-message="Please enter a message." name="duration_month" pattern="[0-9]">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="start" type="date" placeholder="Start at the latest" required="" data-validation-required-message="Please enter a message." name="start"></textarea>
+                  <input class="form-control" id="start" type="date" placeholder="Démarrage au plus tard" required data-validation-required-message="Please enter a date." name="start">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="text" type="text" placeholder="Location" required="" data-validation-required-message="Please enter a message." name="location"></textarea>
+                  <input class="form-control" id="text" type="text" placeholder="Lieu" required data-validation-required-message="Please enter a location." name="location" pattern="[A-Za-z]">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="rate" type="text" placeholder="Rate(€ HT)" required="" data-validation-required-message="Please enter a message." name="rate"></textarea>
+                  <input class="form-control" id="rate" type="text" placeholder="Prix(€ HT)" data-validation-required-message="Please enter a price." name="rate" pattern="[0-9]">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="rate" type="file" placeholder="Description file a compléter" required="" data-validation-required-message="Please enter a message." name="file"></textarea>
+                  <input class="form-control" id="rate" type="file" value="Fichier de Description" data-validation-required-message="Please enter a message." name="file">
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <textarea class="form-control" id="consultants" rows=5 placeholder="Consultants name" required="" data-validation-required-message="Please enter a message." ></textarea>
+                  <input class="form-control" id="consultants" rows=5 placeholder="Nom du consultant" required data-validation-required-message="Please enter a message." pattern="[A-Za-z]">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Save & Share</button>
+                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Valider</button>
               </div>
 			   <div class="control-group">
               </div>
