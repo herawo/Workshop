@@ -98,7 +98,7 @@ if(!$_COOKIE['connected']){
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">
-                  <input class="form-control" id="rate" type="text" placeholder="Description file a compléter" required="" data-validation-required-message="Please enter a message." name="file"></textarea>
+                  <input class="form-control" id="rate" type="file" placeholder="Description file a compléter" required="" data-validation-required-message="Please enter a message." name="file"></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
 				<div class="form-group floating-label-form-group controls">

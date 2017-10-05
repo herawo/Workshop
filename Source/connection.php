@@ -3,7 +3,7 @@
 
 <?php
 $user = 'root';
-$pass = 'root';
+$pass = '';
 $dbh = new PDO('mysql:host=localhost;dbname=assist_com', $user, $pass);
 
 $mail=$_GET['mail'];

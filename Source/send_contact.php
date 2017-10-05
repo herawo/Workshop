@@ -19,7 +19,7 @@ $creator=$_COOKIE['COMMID'];
 
 $stmt = $dbh->prepare("INSERT INTO projet(date, contact_mail, full_description, contact_name, title, duration_month, start, location, rate, file,creator)  VALUES (:date, :contact_mail, :full_description, :contact_name, :title, :duration_month, :start, :location, :rate, :file, :creator)");
 
-$stmt->bindParam(':date', $date);
+$stmt->bindParam(":date", strtotime($date));
 $stmt->bindParam(':contact_mail', $contact_mail);
 $stmt->bindParam(':full_description', $full_description);
 $stmt->bindParam(':contact_name', $contact_name);
@@ -33,6 +33,6 @@ $stmt->bindParam(':creator',$creator);
 
 $stmt->execute();
 
-//header('Location: Page_d\'accueil.php');
+header('Location: Page_d\'accueil.php');
 
 ?>

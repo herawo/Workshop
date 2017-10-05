@@ -46,14 +46,14 @@ $res = $stmt->execute();
       <div class="container">
         <a class="navbar-brand js-scroll-trigger">Tableau de bord</a>
       </div>
-    <form class="form-inline pull-right">
+    <!-- <form class="form-inline pull-right">
             <input type="text" style="width:150px" class="input-sm form-control" placeholder="Recherche">
             <button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-      </form>
+      </form> -->
     </nav>
     
   </header>
-    <a class="navbar-brand js-scroll-trigger" href="fiche_besoin.html">Création d'une fiche de besoin</a>
+    <a class="navbar-brand js-scroll-trigger" href="fiche_besoin.php">Création d'une fiche de besoin</a>
   <div class="col-lg-8 mx-auto">
     <table id="tableau_besoin" class="table">
 
@@ -71,7 +71,7 @@ $res = $stmt->execute();
         <?php
         while($donnees = $stmt->fetch()){
           echo "<tr>";
-          echo "<th scope='row'>1</th>";
+          echo "<th scope='row'>".$donnees['idProjet']."</th>";
           echo "<td>".$donnees['title']."</td>";
           echo "<td>".$donnees['contact_name']."</td>";
           echo "<td>Statut1</td>";
